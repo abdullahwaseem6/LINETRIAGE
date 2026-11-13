@@ -4,7 +4,10 @@ Run it with: uvicorn linetriage.api:app --reload
 Then open http://localhost:8000/docs to try it.
 """
 
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from linetriage.extractor import ExtractionError, extract
@@ -12,6 +15,13 @@ from linetriage.rules import Route, route_report
 from linetriage.schema import FaultReport
 
 app = FastAPI(title="LineTriage", description="Factory fault report triage.")
+
+INDEX_HTML = Path(__file__).parent / "static" / "index.html"
+
+
+@app.get("/", include_in_schema=False)
+def index() -> FileResponse:
+    return FileResponse(INDEX_HTML)
 
 
 class TriageRequest(BaseModel):

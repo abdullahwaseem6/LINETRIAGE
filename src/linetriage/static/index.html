@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LineTriage</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --border: #e3e6eb;
+    --text: #15181d;
+    --muted: #5f6672;
+    --accent: #1f4fd1;
+    --accent-text: #ffffff;
+    --safety-bg: #fdecec; --safety-fg: #b42318;
+    --review-bg: #fff4e5; --review-fg: #a15c07;
+    --escalate-bg: #eef2ff; --escalate-fg: #3538cd;
+    --auto-bg: #ecfdf3; --auto-fg: #067647;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --surface: #171a20;
+      --border: #2a2f38;
+      --text: #e8eaee;
+      --muted: #9aa1ad;
+      --accent: #5b8cff;
+      --accent-text: #0f1115;
+      --safety-bg: #3a1513; --safety-fg: #ff9c92;
+      --review-bg: #3a2a10; --review-fg: #fdc56b;
+      --escalate-bg: #1e2147; --escalate-fg: #a4b0ff;
+      --auto-bg: #0f2e1f; --auto-fg: #6ce0a5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .bar {
+    max-width: 880px; margin: 0 auto; padding: 14px 16px;
+    display: flex; align-items: baseline; gap: 12px;
+  }
+  .logo { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+  .tagline { color: var(--muted); font-size: 13px; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 16px 48px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  textarea {
+    width: 100%; min-height: 110px; resize: vertical;
+    padding: 12px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .examples { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px; }
+  .examples span { color: var(--muted); font-size: 13px; margin-right: 2px; align-self: center; }
+  .chip {
+    border: 1px solid var(--border); background: transparent; color: var(--muted);
+    border-radius: 999px; padding: 3px 10px; font-size: 13px; cursor: pointer;
+  }
+  .chip:hover { color: var(--text); border-color: var(--muted); }
+  .actions { display: flex; align-items: center; gap: 12px; }
+  button.primary {
+    background: var(--accent); color: var(--accent-text); border: 0;
+    border-radius: 8px; padding: 9px 18px; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button.primary:disabled { opacity: 0.6; cursor: default; }
+  .hint { color: var(--muted); font-size: 13px; }
+  .error { color: var(--safety-fg); }
+  #result { display: none; }
+  .route {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    padding: 14px 16px; border-radius: 8px; margin-bottom: 16px;
+  }
+  .route .name { font-weight: 700; letter-spacing: 0.02em; }
+  .route .reason { flex: 1 1 240px; }
+  .route.safety_alert { background: var(--safety-bg); color: var(--safety-fg); }
+  .route.human_review { background: var(--review-bg); color: var(--review-fg); }
+  .route.escalate_quality { background: var(--escalate-bg); color: var(--escalate-fg); }
+  .route.auto_ticket { background: var(--auto-bg); color: var(--auto-fg); }
+  .summary { margin: 0 0 16px; }
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden; margin: 0;
+  }
+  .facts div { background: var(--surface); padding: 10px 12px; }
+  .facts dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .facts dd { margin: 2px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+  .facts dd.none { color: var(--muted); font-weight: 400; }
+  .review { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+  .review button {
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 8px; padding: 7px 14px; font: inherit; cursor: pointer;
+  }
+  .review button:hover { border-color: var(--muted); }
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <span class="logo">LineTriage</span>
+    <span class="tagline">Fault report triage · AI extracts facts, rules decide, a human approves</span>
+  </div>
+</header>
+<main>
+  <form class="card" id="form">
+    <label for="text">Operator report</label>
+    <textarea id="text" maxlength="2000" placeholder="e.g. st 5 conveyor jammed couple of times today" required></textarea>
+    <div class="examples">
+      <span>Examples:</span>
+      <button type="button" class="chip">st2 guard on the robot cell is off bc the latch broke, we just keep going lol</button>
+      <button type="button" class="chip">6os allomas csavarbehajto megint nem huzza meg, kb 10 perc allas</button>
+      <button type="button" class="chip">ST07 Prüfung - Kratzer auf Gehäuse, ganze Charge, kein Stillstand</button>
+      <button type="button" class="chip">the big conveyor near the dock stopped again for like 20 min</button>
+    </div>
+    <div class="actions">
+      <button class="primary" id="submit" type="submit">Triage report</button>
+      <span class="hint" id="status"></span>
+    </div>
+  </form>
+
+  <section class="card" id="result" aria-live="polite">
+    <div class="route" id="route">
+      <span class="name" id="route-name"></span>
+      <span class="reason" id="route-reason"></span>
+    </div>
+    <p class="summary" id="summary"></p>
+    <dl class="facts" id="facts"></dl>
+    <div class="review">
+      <button type="button" data-decision="Approved">Approve</button>
+      <button type="button" data-decision="Overridden">Override</button>
+      <span class="hint" id="review-status">Recommendation only. A human makes the final call.</span>
+    </div>
+  </section>
+
+  <footer>Routing is decided by tested rules, never by the AI. Safety reports always go to a human.</footer>
+</main>
+
+<script>
+  const ROUTE_NAMES = {
+    safety_alert: "Safety alert",
+    human_review: "Human review",
+    escalate_quality: "Escalate to quality",
+    auto_ticket: "Auto ticket",
+  };
+  const FIELDS = [
+    ["station_id", "Station"],
+    ["fault_type", "Fault type"],
+    ["downtime_minutes", "Downtime"],
+    ["recurring", "Recurring"],
+    ["safety_involved", "Safety risk"],
+    ["affected_part", "Affected part"],
+    ["language", "Language"],
+  ];
+  const LANGUAGES = { en: "English", hu: "Hungarian", de: "German", mixed: "Mixed" };
+
+  const $ = (id) => document.getElementById(id);
+  const form = $("form"), text = $("text"), submit = $("submit"), status = $("status");
+
+  document.querySelectorAll(".chip").forEach((chip) =>
+    chip.addEventListener("click", () => { text.value = chip.textContent; text.focus(); })
+  );
+
+  function show(key, value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value === "boolean") return value ? "Yes" : "No";
+    if (key === "downtime_minutes") return value === 0 ? "None (kept running)" : `${value} min`;
+    if (key === "language") return LANGUAGES[value] || value;
+    return String(value);
+  }
+
+  function render(data) {
+    const route = $("route");
+    route.className = "route " + data.route;
+    $("route-name").textContent = ROUTE_NAMES[data.route] || data.route;
+    $("route-reason").textContent = data.reason;
+    $("summary").textContent = data.facts.summary;
+    const facts = $("facts");
+    facts.replaceChildren();
+    for (const [key, label] of FIELDS) {
+      const value = show(key, data.facts[key]);
+      const box = document.createElement("div");
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = label;
+      dd.textContent = value ?? "Unknown";
+      if (value === null) dd.className = "none";
+      box.append(dt, dd);
+      facts.append(box);
+    }
+    $("review-status").textContent = "Recommendation only. A human makes the final call.";
+    $("result").style.display = "block";
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!text.value.trim()) return;
+    submit.disabled = true;
+    status.className = "hint";
+    status.textContent = "Analysing…";
+    try {
+      const response = await fetch("/triage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: text.value }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Invalid request.");
+      render(data);
+      status.textContent = "";
+    } catch (err) {
+      status.className = "hint error";
+      status.textContent = err.message || "Something went wrong.";
+    } finally {
+      submit.disabled = false;
+    }
+  });
+
+  document.querySelectorAll("[data-decision]").forEach((button) =>
+    button.addEventListener("click", () => {
+      $("review-status").textContent = `${button.dataset.decision}. (Not saved yet: decisions are stored in a later phase.)`;
+    })
+  );
+</script>
+</body>
+</html>

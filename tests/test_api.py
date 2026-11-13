@@ -57,3 +57,10 @@ def test_extraction_failure_returns_502(monkeypatch):
     response = client.post("/triage", json={"text": "st5 broke"})
     assert response.status_code == 502
     assert "Invalid output" in response.json()["detail"]
+
+
+def test_home_page_is_served():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "text/html" in response.headers["content-type"]
+    assert "LineTriage" in response.text
