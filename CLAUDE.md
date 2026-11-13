@@ -32,9 +32,9 @@ report text → extractor.py (LLM: facts only) → schema.py (Pydantic validatio
 
 ## Roadmap
 
-1. ✅ Rules, schema, registry, 20 test reports
-2. Extractor + FastAPI `/triage` endpoint, 60 reports
-3. Evaluation and baseline results (CV-ready)
+1. ✅ Rules, schema, registry, test reports
+2. ✅ Extractor + FastAPI `/triage` endpoint + web page, 60 reports
+3. ✅ Evaluation and baseline results (`python eval/run_eval.py`)
 4. ~1,500 synthetic training reports, cleaned
 5. Train a small model (TF-IDF + XLM-RoBERTa) and compare with the LLM
 6. Attack, harden (`guard.py`), re-test

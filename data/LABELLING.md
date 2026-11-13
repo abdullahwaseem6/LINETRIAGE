@@ -23,7 +23,7 @@ A slip hazard from an oil leak is `mechanical`, not `safety`. The leak is what w
 
 ## safety_involved
 
-`true` whenever anyone could get hurt, whatever the `fault_type`. Read for hidden risks in casual notes: a removed guard, a burning smell, someone slipping, even if the line kept running.
+`true` whenever anyone could get hurt, whatever the `fault_type`. Read for hidden risks in casual notes: a removed guard, a burning smell, overheating (fire risk), a leak onto the floor (slip risk), someone slipping, even if the line kept running.
 
 ## recurring
 
