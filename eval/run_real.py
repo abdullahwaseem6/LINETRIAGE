@@ -8,6 +8,7 @@ Writes eval/results/<name>.md. Costs about 2 cents per 60 notes with Haiku.
 
 import argparse
 import csv
+import json
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
@@ -25,6 +26,7 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=5)
     parser.add_argument("--sample", type=Path, default=ROOT / "data" / "real" / "real_sample.csv")
     parser.add_argument("--name", default="real_maintnorm")
+    parser.add_argument("--save", action="store_true", help="also save every prediction to <name>_predictions.jsonl")
     args = parser.parse_args()
     out = RESULTS / f"{args.name}.md"
 
@@ -43,6 +45,11 @@ def main() -> None:
     print(f"Running {len(rows)} real notes × {args.runs} runs with {extractor.MODEL}...")
     with ThreadPoolExecutor(args.workers) as pool:
         results = list(pool.map(run, jobs))
+
+    if args.save:
+        with (RESULTS / f"{args.name}_predictions.jsonl").open("w", encoding="utf-8") as f:
+            for row, run_no, ft, safe in results:
+                f.write(json.dumps({"id": row["id"], "run": run_no, "fault_type": ft, "safety_involved": safe}) + "\n")
 
     n = len(results)
     errors = sum(r[2] is None for r in results)

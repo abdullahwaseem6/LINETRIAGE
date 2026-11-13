@@ -2,10 +2,10 @@
 name = "linetriage"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = ["pydantic>=2", "anthropic", "python-dotenv", "fastapi", "uvicorn"]
+dependencies = ["pydantic>=2", "anthropic", "python-dotenv", "fastapi", "uvicorn", "scikit-learn", "joblib"]
 
 [project.optional-dependencies]
-dev = ["pytest", "httpx"]
+dev = ["pytest", "httpx", "pandas", "rapidfuzz", "jupyter", "nbformat"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

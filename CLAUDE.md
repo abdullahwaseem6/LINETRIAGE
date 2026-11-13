@@ -35,7 +35,7 @@ report text → extractor.py (LLM: facts only) → schema.py (Pydantic validatio
 1. ✅ Rules, schema, registry, test reports
 2. ✅ Extractor + FastAPI `/triage` endpoint + web page, 60 reports
 3. ✅ Evaluation and baseline results (`python eval/run_eval.py`)
-4. ~1,500 synthetic training reports, cleaned
-5. Train a small model (TF-IDF + XLM-RoBERTa) and compare with the LLM
+4. ✅ 1,345 real MaintNorm training notes, labelled by Haiku, cleaned
+5. ✅ TF-IDF baseline vs LLM done; XLM-RoBERTa still to do
 6. Attack, harden (`guard.py`), re-test
 7. Streamlit review UI, README, demo, launch

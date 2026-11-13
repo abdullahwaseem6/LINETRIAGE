@@ -49,6 +49,8 @@ A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers 
 
 **On real notes** ([MaintNorm](https://github.com/nlp-tlp/maintnorm): mining maintenance work orders), safety recall was only **63.5%** at first: calm notes like "Replace brake hose" weren't seen as risks. After adding rules learned from a separate dev set, recall on 150 unseen real notes rose to **about 90–93%** (it varies between runs), at the cost of more false alarms (11–13%). See [the real-data write-up](eval/results/real_data.md).
 
+**Own model vs the LLM** (150 real test notes): a small TF-IDF + logistic regression model, trained in 3 seconds on 1,076 real notes labelled by Haiku, runs in under 1 ms for free. At Haiku's false-alarm level it catches 75% of dangerous notes against Haiku's 92%. Used as a second opinion (flag if either says dangerous), recall rises to **98.2%**. See [the model comparison](eval/results/model_comparison.md).
+
 ## What still fails
 
 - Notes describing two faults keep only the more serious one (the schema holds one fault).
@@ -89,13 +91,18 @@ python eval/run_eval.py                  # full evaluation (about 6 cents)
 | `eval/run_eval.py` | Runs the evaluation and writes `eval/results/` |
 | `eval/run_real.py` | Tests on real MaintNorm notes |
 | `data/real/` | Real notes: 60 dev + 150 test, labelled |
+| `data/training/` | 1,345 cleaned training notes + cleaning log |
+| `notebooks/cleaning.ipynb` | The cleaning steps |
+| `training/train_baseline.py` | Trains the small model |
+| `eval/compare_models.py` | LLM vs small model on the real test set |
 
 ## Roadmap
 
 - [x] Rules, schema and test reports
 - [x] LLM extraction, API and web page
 - [x] Evaluation and baseline
-- [ ] ~1,500 synthetic training reports, cleaned
-- [ ] Train a small multilingual model and compare it with the LLM
+- [x] 1,345 real training notes (MaintNorm), labelled by the LLM and cleaned ([log](data/training/cleaning_log.md))
+- [x] Train a small model and compare it with the LLM
+- [ ] Fine-tune a multilingual transformer (XLM-RoBERTa)
 - [ ] Attack the system with prompt injection, harden it, re-test
 - [ ] Human review UI with decision log
