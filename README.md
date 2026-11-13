@@ -48,12 +48,15 @@ human approves or overrides
 
 A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers from 56 to 17. See [the before/after write-up](eval/results/schema_review.md).
 
+**On real notes** ([MaintNorm](https://github.com/nlp-tlp/maintnorm): mining maintenance work orders), safety recall was only **63.5%** at first: calm notes like "Replace brake hose" weren't seen as risks. After adding rules learned from a separate dev set, recall on 150 unseen real notes rose to **91.8%**, at the cost of more false alarms (12.4%). See [the real-data write-up](eval/results/real_data.md).
+
 ## What still fails
 
 - Notes describing two faults keep only the more serious one (the schema holds one fault).
 - One false safety alarm: "let it cool" is read as overheating. It errs on the safe side.
 - Slang like "pc is dead dead" is sometimes classed as `other` instead of `electrical`. The route is still correct.
-- 60 test reports is a small test set. The station registry and reports are synthetic.
+- On real notes, safety recall is 91.8%, not 100%: specialised safety equipment (gas testers, interlock switches) is still missed.
+- The 60 factory reports and station registry are synthetic; the real notes are English mining work orders, labelled by Claude Opus and not yet reviewed by a human.
 
 ## Run it
 
@@ -85,6 +88,8 @@ python eval/run_eval.py                  # full evaluation (about 6 cents)
 | `data/reports.jsonl` | 60 labelled test reports |
 | `data/LABELLING.md` | How each field is labelled |
 | `eval/run_eval.py` | Runs the evaluation and writes `eval/results/` |
+| `eval/run_real.py` | Tests on real MaintNorm notes |
+| `data/real/` | Real notes: 60 dev + 150 test, labelled |
 
 ## Roadmap
 

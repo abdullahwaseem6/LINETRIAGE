@@ -1,0 +1,151 @@
+id,text,fault_type,safety_involved,notes
+T001,CC0233 r/h rear axle fiter housing leak,mechanical,true,leak
+T002,Ex2526 Repair Transmission Fault,mechanical,false,
+T003,DU7016 Minor torque converter oil leak,mechanical,true,leak (minor)
+T004,DCS Boom press monitoring system improve,sensor,false,monitoring system
+T005,trace & repair hyd oil leak RH steer ram,mechanical,true,leak + steering
+T006,UQ9701 hoist screen hose leaking,mechanical,true,leak
+T007,AN426 REPL CAB SEAT SHOCKIE,mechanical,false,seat shock absorber
+T008,CC708 replace trans ECM see long text,electrical,false,control module
+T009,LR2095 Trans hose leaks,mechanical,true,leak
+T010,CC708 PXG33 Repair fuel hoses see text,mechanical,false,no leak stated (borderline: fuel)
+T011,Load P&H bucket 4,other,false,task
+T012,TQ598 REPL ALTERNATOR,electrical,false,
+T013,Broken handrail RHS boarding ladder,safety,true,handrail
+T014,98 Week Tool Inspection 'O' Crew Trucks,other,false,routine inspection
+T015,OK5862 engine hard to start,other,false,cause unknown
+T016,ND5744 Replace fuel tank vent valve,mechanical,false,
+T017,BF079 REPL RH LEAKING LIFT CYLINDER,mechanical,true,leak
+T018,TV3998 Leaking hyd hose at rockbraker,mechanical,true,leak
+T019,CC708 TZM57 Steering pin no grease TEXT,mechanical,false,lubrication
+T020,SS0308 c/o leaking pos 6 valve stem,mechanical,true,tyre valve leak
+T021,ADM76 INV/REP HYDRAULIC FAULT,mechanical,false,
+T022,250H Mech Svce Excavator T954A RW7142,other,false,routine service
+T023,BF079 REPLACE FUEL LINES,mechanical,false,no leak stated
+T024,drag rope slipping throgh socket,mechanical,true,rope slipping on dragline (borderline)
+T025,AF5037 - Hydraulic oil leak from enviro,mechanical,true,leak
+T026,CR871 REPLACE STARTER SOLENOID RELAY,electrical,false,
+T027,MB119 REPAIR LIGHTS,electrical,false,lights
+T028,both rear diff oils need replacing,other,false,routine service
+T029,BT0391 air con belt us,mechanical,false,
+T030,XF3996 CW Engine oil leaks x 2,mechanical,true,leak
+T031,AN426 REPLACE AFFF BOTTLE GAUGE,safety,true,fire suppression part
+T032,BT0391-C/out Turbo Primary LFT FRNT,mechanical,false,
+T033,AN426 DEGREASE&CLEAN RADIATORS&COOLERS,other,false,cleaning
+T034,Seat belt u/s,safety,true,seat belt
+T035,RH DOOR OPENING MECHANISM FAULTY,mechanical,false,door mechanism (borderline: egress)
+T036,WK1566 Fuel breather filter missing,mechanical,false,
+T037,Carry out general lighting repairs,electrical,false,lights
+T038,PH639 REPLACE HYD COOLER HOSES,mechanical,false,no leak stated
+T039,BF079 FIT SAFETY RAIL SYSTEM TBC,other,false,"installation task, not a fault"
+T040,Clean out front of shoe,other,false,cleaning
+T041,BF079 REPLACE BUCKET STOPS,mechanical,false,
+T042,XH531 REPL CRACKED DOOR WINDOW TEXT,mechanical,true,cracked window
+T043,5635 Bucket Overhaul-Mechanical BKT # 1,other,false,overhaul task
+T044,CC708 - Change Out Bucket GET,mechanical,false,wear parts
+T045,XH531 Replace U/S diff drian plugs,mechanical,false,
+T046,XH1714-Fire Suppression Inspection,other,false,routine inspection
+T047,RW7142 lower a/con comp alignment,mechanical,false,
+T048,Split cable for shot,other,false,task
+T049,CC708 REPAIR ENGINE OIL LEAKS,mechanical,true,leak
+T050,Crack at boom point of 526,mechanical,false,structural crack (borderline)
+T051,CR871 REPLACE BUCKET JOYSTICK,mechanical,false,
+T052,PH639 repair elctical fault see text,electrical,false,
+T053,DO7053 - In Cab stop button missing,safety,true,stop button
+T054,WJ525 REPL POS 3+4 FINAL DRIVE ASSY,mechanical,false,
+T055,house lights out,electrical,false,lights
+T056,MB119 ENGINE SHUTTING DOWN,other,false,cause unknown (borderline)
+T057,GU245 REPL PIN/BEARING IN ROD END LHS,mechanical,false,
+T058,Air Leak in Seat Hose,mechanical,false,"air leak, not fluid"
+T059,UF2558 - W REPAIR ENGINE OIL LEAK ANDr,mechanical,true,leak
+T060,AF5037-C/out Fuel Transfer Pump,mechanical,false,
+T061,LD3192 Reseal main water pump mount,mechanical,false,"reseal, no leak stated"
+T062,VistaCam system not working,sensor,false,camera
+T063,rear module work lights loose,electrical,false,lights
+T064,xw7695 repair headlight fault,electrical,false,lights
+T065,Hoist Brake Switch operation,electrical,true,brake switch
+T066,PH639 REPL WORN OUT THROTTLE PEDAL ASSY,mechanical,false,
+T067,BD3257- door spring pivot u/s,mechanical,false,
+T068,AN426 REPLACE L/H CORNER BUCKET TOOTH,mechanical,false,wear part
+T069,7897 Repair Walkways & Handrails,safety,true,walkways and handrails
+T070,hm5190 emergency ladder repairs,safety,true,emergency ladder
+T071,MB119 PARK BRAKE WILL NOT RELEASE,mechanical,true,park brake
+T072,replace 209 under bench down light,electrical,false,lights
+T073,Mast pendant ropes replacment,mechanical,false,routine replacement
+T074,AL6487 engine spd sensor faults,sensor,false,
+T075,CC708 REPLACE BUCKET TOOTH,mechanical,false,wear part
+T076,diesel quick fill leaking RH side,mechanical,true,fuel leak
+T077,Re-fit Tool to measure foot movement,other,false,task
+T078,UN7986- Diff lube Hose leaking,mechanical,true,leak
+T079,BR8769 oil cap missing,mechanical,false,
+T080,CR871 REPL MAIN STEERING PRESSURE HOSE,mechanical,true,steering
+T081,PH639 REPL NEUTRALIZER MICRO SWITCH,safety,true,neutraliser is a safety interlock
+T082,engine exh flex / pipe & rain cap u/s,mechanical,false,no leak stated (borderline: exhaust)
+T083,BP504 HYD OIL BYPASSING INTO TRANS,mechanical,false,internal
+T084,GU245 REPLACE RADIATOR,mechanical,false,
+T085,SA923 December 12 Shutdown labour,other,false,planning
+T086,Me9685 Grease Injector Mount Plate u/s,mechanical,false,
+T087,8664 24WK 415V Distribution Service,other,false,routine service
+T088,Take LH F/Drive Oil Sample,other,false,oil sample
+T089,NDT - A Frame Walkways VI MT,other,false,routine inspection
+T090,damaged cable work,electrical,true,damaged cable
+T091,MB119 REPAIR ENGINE OVERHEATING,electrical,true,overheating
+T092,I LK621 Rinachi Services Plan,other,false,planning
+T093,XH531 Repair to battery cover,mechanical,false,
+T094,PH639 REPLACE LHS LIFT CYL LEAK,mechanical,true,leak
+T095,WK1566 Cooling system pressurising REPL,mechanical,false,
+T096,1000H Mech Insp Hyd Cyl Bucket RH TY8010,other,false,routine inspection
+T097,REAR DIFF YOKE,mechanical,false,
+T098,XH531 REPAIR BRAKE FAULT,mechanical,true,brakes
+T099,XH1714 Replace Pos 4 brake cooling hose,mechanical,true,brakes
+T100,sight glass replace,mechanical,false,
+T101,Replace conduits on fan motors,electrical,false,
+T102,Tighten bolts on walking cam,mechanical,false,
+T103,Check lh travel motor leaking oil,mechanical,true,leak
+T104,AN426 REPLACE ENGINE SEC SPEED SENSOR,sensor,false,
+T105,OU089 INVESTIGATE NOISE FROM POS 0,other,false,cause unknown
+T106,MR0229 Crack in headboard,mechanical,false,structural crack (borderline)
+T107,HF338 diagnose/repair slow steering,mechanical,true,steering
+T108,Swing brakes coming on now and then,mechanical,true,brakes
+T109,GU245 REPLACE ENGINE SPEED SENSOR,sensor,false,
+T110,heater hoses at bottom front of cab u/s,mechanical,false,no leak stated
+T111,XF3996 c/o blown pos 3 tyre,mechanical,true,blown tyre
+T112,replace missing RH handrail bolt,safety,true,handrail
+T113,AI9714 lights need aligning/cv replaced,electrical,false,lights
+T114,UN7986 coolant leak pos 8 turbo,mechanical,true,leak
+T115,AF5037 2way unit is loose needs tighten,other,false,unclear
+T116,C/O upper hoist chains,mechanical,false,routine replacement
+T117,JZ9248 Gate latch pin missing INSPECT &,safety,true,gate latch
+T118,AF5037 Steering oil temp faults,sensor,true,steering fault
+T119,hoist brake control valve leaking,mechanical,true,brakes + leak
+T120,Loose Drivers Mirror Post,mechanical,false,mirror (borderline: visibility)
+T121,XH531 REPLACE DAMAGED WINDOW,mechanical,true,damaged window
+T122,OO9426-Inspect Operator Seat,other,false,routine inspection
+T123,RHR tremmel wheel snapped off,mechanical,false,
+T124,Flashing light U/S replaced,electrical,false,lights
+T125,BF079 REPAIRHYD OIL LEAK,mechanical,true,leak
+T126,BF079 REPLACE FIRE EXTINGUISHERS,safety,true,fire extinguishers
+T127,Zk2486 Replace Alternator RH Eng,electrical,false,
+T128,10000H Mech Insp Cam SFT BC4051,other,false,routine inspection
+T129,hv reset 66kv sub fault,electrical,true,high voltage
+T130,I cutting edges falling off,mechanical,false,wear parts (borderline: falling parts)
+T131,WJ525 REPLACE POS 9 & 4 WHEEL ENDS,mechanical,false,
+T132,NS867=EPW 65304 REPAIR GAS TESTER,safety,true,gas tester
+T133,TO0487 VIMS keypad backlight blown,electrical,false,
+T134,FN5736 Replace Fuel Breather,mechanical,false,
+T135,Repair RHS top rail crack,safety,true,top rail = handrail
+T136,bucket teeth missing,mechanical,false,wear parts
+T137,DU7016 blowing smoke,mechanical,false,engine smoke (borderline: fire)
+T138,HF338 Park brake won't release,mechanical,true,park brake
+T139,JA0341 Minor ENG oil leak top rear eng,mechanical,true,leak
+T140,WK1566 Replace leaking brake cooling hos,mechanical,true,brakes + leak
+T141,526 # 3 air comp leaking from oil cooler,mechanical,true,leak
+T142,Pre Summer Audit A/Con units #348,other,false,audit
+T143,oil leaking down swing shafts 4 1 & 0,mechanical,true,leak
+T144,Resample oil on both compressors,other,false,oil sample
+T145,TO0487 Tray coming down hard fault,mechanical,true,tray dropping hard (borderline: crush risk)
+T146,AF5037 Switch/control to overide pump u/,electrical,false,
+T147,AN426 REPORTS TRANY OIL IS BLACK REPORT,mechanical,false,
+T148,UQ9701 coolant leaks,mechanical,true,leak
+T149,NF4651 change out oil and filters BAD,other,false,routine service
+T150,ZA339 REPAIR FUEL FAULT,other,false,cause unknown

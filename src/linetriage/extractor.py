@@ -56,6 +56,22 @@ Fill in each field as follows:
   with English words like "ok" or "hiccup").
 - summary: one short English sentence describing the fault.
 
+Notes about vehicles and heavy equipment (trucks, diggers, loaders) are often
+short work orders in capitals with abbreviations ("C/O" = change out, "u/s" =
+unserviceable/broken, "REPL" = replace, "P/BRAKE" = park brake). A short,
+calm-sounding note can still describe a serious risk. For these:
+- any fluid leak (oil, hydraulic, coolant, fuel, exhaust): safety_involved
+  true (slip, fire or fume risk). A replacement or reseal with no leak stated:
+  false.
+- any brake or steering fault, including brake hoses and the park brake:
+  safety_involved true.
+- tyre damage, and broken or cracked windows: safety_involved true.
+- broken, missing or damaged safety equipment (handrails, guards, stop
+  buttons, interlocks, fire suppression): fault_type safety,
+  safety_involved true.
+- routine inspections, services, crack tests, oil samples and planning
+  entries are not faults: fault_type other, safety_involved false.
+
 If a note describes two faults, fill in fault_type for the more serious one:
 a safety problem beats a quality problem (bad parts), which beats the fault
 that stopped the line. safety_involved is true if either fault could hurt

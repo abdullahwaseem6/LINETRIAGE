@@ -44,3 +44,16 @@ The product being made: a part, component or batch, in English and short ("brack
 ## Two faults in one note
 
 Label the more serious fault: a safety problem beats a quality problem, which beats the fault that stopped the line. `safety_involved` is `true` if either fault could hurt someone. `affected_part` can come from either fault.
+
+## Vehicles and heavy equipment (real MaintNorm notes)
+
+The real notes in `data/real/` come from mining trucks and diggers. Same rules, plus:
+
+- **Fluid leaks** (oil, hydraulic, coolant, fuel, exhaust) → `safety_involved: true`: slip, fire or fume risk. A replacement or reseal with no leak stated → `false`.
+- **Brakes and steering faults** (including brake cooling hoses, park brake) → `safety_involved: true`.
+- **Tyre damage** (blown, damaged, leaking valve stem) → `safety_involved: true`: blowout risk.
+- **Broken or cracked windows** → `safety_involved: true`.
+- **Access and egress safety** (handrails, walkways, emergency ladders, gate latches) and **safety devices** (seat belts, stop buttons, neutraliser switches, gas testers, fire suppression parts) → `fault_type: safety`, `safety_involved: true`.
+- **Damaged cables and high-voltage faults** → `electrical`, `safety_involved: true`.
+- **Routine inspections, services, crack tests, oil samples, audits, planning** → `other`, `safety_involved: false`.
+- **Lights, gauges, sensors, starter motors, alternators** → `electrical` or `sensor`, `safety_involved: false`.

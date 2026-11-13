@@ -1,9 +1,9 @@
 """Test the extractor on real maintenance notes (MaintNorm sample).
 
-Usage: python eval/run_real.py [--runs 3] [--workers 5]
+Usage: python eval/run_real.py [--sample data/real/real_test.csv] [--name real_test] [--runs 3]
 Scores only fault_type and safety_involved: real notes don't use our station
 registry, so routes would all be HUMAN_REVIEW and aren't meaningful here.
-Writes eval/results/real_maintnorm.md. Costs about 2 cents with Haiku.
+Writes eval/results/<name>.md. Costs about 2 cents per 60 notes with Haiku.
 """
 
 import argparse
@@ -16,17 +16,19 @@ from linetriage import extractor
 from linetriage.extractor import extract
 
 ROOT = Path(__file__).resolve().parent.parent
-SAMPLE = ROOT / "data" / "real" / "real_sample.csv"
-OUT = ROOT / "eval" / "results" / "real_maintnorm.md"
+RESULTS = ROOT / "eval" / "results"
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--workers", type=int, default=5)
+    parser.add_argument("--sample", type=Path, default=ROOT / "data" / "real" / "real_sample.csv")
+    parser.add_argument("--name", default="real_maintnorm")
     args = parser.parse_args()
+    out = RESULTS / f"{args.name}.md"
 
-    rows = list(csv.DictReader(SAMPLE.open(encoding="utf-8")))
+    rows = list(csv.DictReader(args.sample.open(encoding="utf-8")))
     client = extractor._default_client()
 
     def run(job):
@@ -63,9 +65,9 @@ def main() -> None:
         return f"{100 * a / b:.1f}%" if b else "n/a"
 
     lines = [
-        "# Real-data test: MaintNorm",
+        f"# Real-data test: {args.name}",
         "",
-        f"{date.today()} · model `{extractor.MODEL}` · {len(rows)} real notes × {args.runs} runs = {n} runs",
+        f"{date.today()} · model `{extractor.MODEL}` · `{args.sample.name}` · {len(rows)} real notes × {args.runs} runs = {n} runs",
         "",
         "Real maintenance notes from Australian mining companies ([MaintNorm](https://github.com/nlp-tlp/maintnorm), MIT).",
         "Labels drafted by Claude Opus, pending human review. Only `fault_type` and `safety_involved` are scored.",
@@ -84,10 +86,10 @@ def main() -> None:
         "|---|---|---|---|",
         *[f"| {i} | {t} | {ft}, {s} | {gft}, {gs} |" for i, t, ft, s, gft, gs in wrong],
     ]
-    OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Safety recall {pct(caught, len(want_safe))} · false alarms {pct(false_alarms, not_safe)} "
           f"· fault_type {pct(fault_ok, n)}")
-    print(f"Wrote {OUT.relative_to(ROOT)}")
+    print(f"Wrote {out.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
