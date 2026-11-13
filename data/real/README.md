@@ -9,3 +9,5 @@
 `real_sample.csv` (dev set, 60 notes, used to improve the prompt) and `real_test.csv` (test set, 150 different notes, never used for tuning) come from the test split, picked by `scripts/sample_real.py` and labelled for `fault_type` and `safety_involved` using `../LABELLING.md`. **Labels were drafted by Claude Opus and still need a human review**; borderline cases are explained in the `notes` column.
 
 These notes are used for testing only, never for training.
+
+`maintie/` holds the expert-annotated gold corpus of **MaintIE** (1,076 notes, entity and relation labels, no safety labels; MIT, https://github.com/nlp-tlp/maintie). Not used yet: see `LATER.md`.
