@@ -91,3 +91,16 @@ def test_refusal_raises_without_retry():
     with pytest.raises(ExtractionError, match="refused"):
         extract("x", client=client)
     assert len(client.calls) == 1
+
+
+def test_usage_counts_tokens():
+    from linetriage.extractor import Usage
+
+    response = SimpleNamespace(
+        parsed_output=GOOD,
+        stop_reason="end_turn",
+        usage=SimpleNamespace(input_tokens=700, output_tokens=120),
+    )
+    usage = Usage()
+    extract("x", client=FakeClient(response), usage=usage)
+    assert (usage.input_tokens, usage.output_tokens, usage.calls) == (700, 120, 1)

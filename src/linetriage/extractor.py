@@ -66,7 +66,23 @@ def _call(client, messages):
     )
 
 
-def extract(text: str, client=None) -> FaultReport:
+class Usage:
+    """Running total of tokens used, for cost tracking. Pass one in to extract()."""
+
+    def __init__(self):
+        self.input_tokens = 0
+        self.output_tokens = 0
+        self.calls = 0
+
+    def add(self, response) -> None:
+        self.calls += 1
+        usage = getattr(response, "usage", None)
+        if usage is not None:
+            self.input_tokens += usage.input_tokens
+            self.output_tokens += usage.output_tokens
+
+
+def extract(text: str, client=None, usage: Usage | None = None) -> FaultReport:
     """Extract facts from one report. Retries once on invalid output, then raises."""
     client = client or _default_client()
     messages = [{"role": "user", "content": f"<report>\n{text}\n</report>"}]
@@ -78,6 +94,8 @@ def extract(text: str, client=None) -> FaultReport:
         except ValidationError as e:
             error = str(e)
         else:
+            if usage is not None:
+                usage.add(response)
             if response.stop_reason == "refusal":
                 raise ExtractionError("The model refused to process this report.")
             if response.parsed_output is not None:
