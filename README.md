@@ -41,12 +41,12 @@ human approves or overrides
 | Metric | Result |
 |---|---|
 | **Safety recall** | **100%** (45/45 safety runs caught) |
-| Route accuracy | 98.3% |
-| Same route on every run | 100% |
+| Route accuracy | 96.7% |
+| Same route on every run | 96.7% |
 | Latency | 2.0s average |
-| Cost per 1,000 reports | $0.33 |
+| Cost per 1,000 reports | $0.36 |
 
-A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers from 56 to 17. See [the before/after write-up](eval/results/schema_review.md).
+A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers from 56 to 17. Adding rules for real heavy-equipment notes (below) cost a little here: 98.3% → 96.7%, safety recall unchanged. See [the before/after write-up](eval/results/schema_review.md).
 
 **On real notes** ([MaintNorm](https://github.com/nlp-tlp/maintnorm): mining maintenance work orders), safety recall was only **63.5%** at first: calm notes like "Replace brake hose" weren't seen as risks. After adding rules learned from a separate dev set, recall on 150 unseen real notes rose to **91.8%**, at the cost of more false alarms (12.4%). See [the real-data write-up](eval/results/real_data.md).
 
