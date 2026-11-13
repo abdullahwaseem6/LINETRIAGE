@@ -36,8 +36,8 @@ def test_route_matches_expected(row):
     assert decision.route is Route(row["expected_route"]), decision.reason
 
 
-def test_ids_are_r01_to_r20():
-    assert [row["id"] for row in REPORTS] == [f"R{n:02d}" for n in range(1, 21)]
+def test_ids_are_r01_to_r60():
+    assert [row["id"] for row in REPORTS] == [f"R{n:02d}" for n in range(1, 61)]
 
 
 def test_every_row_has_only_known_keys():
