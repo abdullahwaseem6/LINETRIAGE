@@ -10,7 +10,7 @@ from pydantic import ValidationError
 
 from linetriage.schema import FaultReport
 
-MODEL = "claude-opus-5-5"
+MODEL = "claude-haiku-5-5"
 
 SYSTEM_PROMPT = """\
 You extract facts from factory fault reports written by machine operators.
@@ -56,15 +56,12 @@ def _default_client() -> anthropic.Anthropic:
 
 
 def _call(client, messages):
-    return client.beta.messages.parse(
+    return client.messages.parse(
         model=MODEL,
         max_tokens=16000,
         system=SYSTEM_PROMPT,
         output_config={"effort": "medium"},
         output_format=FaultReport,
-        # If Claude declines, the API retries on a fallback model in the same call.
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
         messages=messages,
     )
 

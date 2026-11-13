@@ -32,7 +32,7 @@ class FakeClient:
     def __init__(self, *results):
         self.results = list(results)
         self.calls = []
-        self.beta = SimpleNamespace(messages=SimpleNamespace(parse=self._parse))
+        self.messages = SimpleNamespace(parse=self._parse)
 
     def _parse(self, **kwargs):
         self.calls.append(kwargs)
