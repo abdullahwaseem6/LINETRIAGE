@@ -1,0 +1,269 @@
+{"text":"LL3433 replace U\/S oil & fuel counters","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"SM2291 Replace diff pressure sensor","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"Test heater function on air con unit\/s","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"RZ8994 Bucket Repairs Gouge adaptors PO","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"RST6138 CC708 QUOTE\/REP COOLER ASSY TBC","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"bolt missing from alternator","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"AN426 REPL BUCKET PROFILE BAR","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"RW7142 Replace pos 9 cap on bucket","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 REPLACE MUD FLAP RUBBER RHS","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 INSP ENG OIL FILTER TEXT TBC","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"HF338 REPLACE ENGINE OIL BREATHER","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"C 5542 Emergency Lighting Audit","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"ripper pin","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 REPAIRS AS PER LIST","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"Swing Gearboxes 2 7 8 & 8 Gearing audit","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"8 monthly Left Transfer Switch Service","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531REPL AUTO GREESER PRESS SWITCH","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"Aux Generator would not transfer over","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"Hoist pony drive motor stopped working","fault_type":"electrical","safety_involved":false,"picked_as":"risky"}
+{"text":"XS7870 Replace Ladder power pack","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"heater control knob missing","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 REPL LHS LIFT CYL","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"ORDER SPARE BOGGER FILTERS FOR 70 LEVEL","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"both drive axles require bump stops","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"MECHANICAL - FUEL HOSE","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"Repair crack in L\/H top rail Bkt # 6","fault_type":"quality","safety_involved":false,"picked_as":"risky"}
+{"text":"GU245 INSPECT CENTER HITCH SEE TEXT","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CR871 REPAIR R\/H LIGHT WIRING FAULT","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 REPL BATTERIES & TEST CHARGE RATE","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"7897 - Take Oil Samples","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"AN426 REPL BATTERYS","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"SM2291 C\/Out Engine - Costs","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"LPM73 REPL R\/H BUCKET PIN","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"MB119 CARRY OUT TIMING CALIBRATION","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"wont start","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 REPLACE CROWD CYL HOSE- VERTICAL","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"CLEAN MOBILE WORKSHOP WEEK 19 - 06\/10","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 COOLANT PIPE CLAMPS NEEDS FITT TBC","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 C\/O AIRCON COMPRESSOR\/ DRIER","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"re-install track","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CR871 REPLACE BUCKET TEETH FULL SET","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"71 Week Tool Inspection Dayshift Crew","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"Grease injectors not delivering full sho","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"JA0341 DIFF LUBE PRESSURE 431 ERROR","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"WJ525 POS 2F\/DRIVE CONTAMINATED SEE TEXT","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"FW9593 C\/O Pos 3 Tyre","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"D Sideflow to Vac all ZDC panels","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"QR0218 - BUCKET REPAIRS","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CD3914 Repair heater control Knob u\/s","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"BF079 OGA 1XRIMS CRACK TESTING QUOTE","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"BF079 REPLACE HYD HOSE","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"straighten rock guard on bucket","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"DN9817 Replace exhaust flex","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 REPLACE ENGINE COVER LATCH RUBBER","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"GE2963-C\/out Battery LFT","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CW DN9817 Replace failed fuel pump L\/H","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"8664 Drag Chain Change out C\/O","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"AF5037 Front cannon u\/s","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"LV7795-Valve Spring Inspection","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"boom point light out","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"AN426 REPIAR AIR CON FAULT","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"B GJ8459 Swing No1 Gear Case Overhaul","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"MODIFICATIONS TO ACCELERATOR PEDAL","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 REPLACE CRACKED HYD FILTER COVER","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"UF2558 depth counter issue","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"reported engine will not start","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 REPLACE PROFILE BAR","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"UQ9701 REMOVE AND RE-SEAL POS 8 FINAL","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 REPLACE FAN BELT SET","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"REPLACE OIL DISPENSING GUN","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"CC708 REMOVE POS 8 FIT MATCHING TYRE","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"NL323 DAILY SERVICE","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 refit bucket tooth","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 quote for repair 74 5A 17 VSMS","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"MB119 REPAIR RIDE CONTROL TBC","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"FN5736 Payload meter not registering","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 Rep O ring on trans mag screen cov","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"jw8087 eng oil level sw U\/S","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"AN426 REPLACE BLOWN HOSE","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"MB119 REPAIR BLOWN ORING","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"MV3594 Tray Up Sensor Fault","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"BG0988 Repair cracks in tray","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"Reload the rope sleds","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CZ6065 low engine oil fault","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"Load the drag rope sleds","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"turbo drain pipe broken","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"OQ524 Re-locate long life rescuer","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"require oil pressure s\/w & key start","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"CR871 REPL RIDE CONTROL VALVE AND COIL","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"replace all window wipers","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"WJ525 REPLACE REAR TRANY COVER","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"AN426 ELECTRICAL REP TO STARTER MOTOR","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"Reset drag limits","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"8664 12WK Swing Walk Coupling Service","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"cover repair","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"7897 Swing No2 Vertical Shaft-Mechanical","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"MV3594 Low Eng Level Oil Fault","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"Inspect\/clean hoist\/softstart cabinets","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"OU089 REPAIR ELECTRICAL FAULTS","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"scheduled replacment of centre bearing","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"MB119 REPAIR BUCKET SURFACE W\/SHOP","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"offsite module crack repairs","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"RDMCC Spare Cubicle E\/L relay U\/S","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"NO5830 fuel guage not working","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"WJ525 REPL POS2 TYRE MATCH UP","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"MB119 REPAIR LOW ENGINE OIL PRESSURE","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"SS0308 air leak","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"2000H BD3257 2000hr Service & Inspection","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"R\/H Final Drive oil sample - ABNORMAL","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"CABIN CONTROLS - SPEEDO GAUGE U\/S","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"AIR CONDITIONING - AIR\/CON NOT WORKING","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"SS0308 feul filters block","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"C\/O risers SA923","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"fabricate scrapper to clean top of tub","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 replace worn dogbone components","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"NF4651 VIMS backlight bulb blown","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"RZ8994 l\/hand engine lta w\/pump c\/o","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"SPEEDO NOT WORKING","fault_type":"sensor","safety_involved":false,"picked_as":"random"}
+{"text":"Replace Oil in Hoist G\/Box # 4","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"BF079 REPL SPRAY WATER CONTAINER","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"grease house rollers","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"CLEAN MOBILE WORKSHOP W 21 - 13\/1018","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"Electrical comms faults","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"BG0988 Replace coolant hoses","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"AN426 Replace Centre Drive line","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"AN426 Repair Boom Lights","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"1000H Insp Hyd Cyl Tong Clamp OO9426","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"IOJ 8308 REPAIR AUTO GREASER PUMP TBC","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"1000H Mech Insp TRK Plates RH RW7142","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 REPAIR POS 4 MUDGUARD","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"PH639 SUPPLY WEAR STRIP TBC","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"CC708 CHANGE OUT CROUD CYL","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"PH639 - Change Out Tyre Pos 0","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"XH531 REPLACE L\/H BUCKET PIN","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"Crack Repairs Various","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"Inspect\/Replace Fuel Tank Breather","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"AIR CONDITIONING - A\/C BLOWING HOT AIR","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"LK621 Travel Trans Duo Cone Seals C\/Out","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"FW9593 engine oil level fault","fault_type":"other","safety_involved":false,"picked_as":"risky"}
+{"text":"OK5862 Comp oil pressure sw u\/s","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"R\/H MUBFLAP MISSING","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"replace LHF trammel fabrica & discs","fault_type":"other","safety_involved":false,"picked_as":"random"}
+{"text":"BF079 BOILY REPAIRS TO BUCKET ASSY","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"No dash power","fault_type":"electrical","safety_involved":false,"picked_as":"random"}
+{"text":"YR410 LOM66 Exhaust repairs text","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"7897 Swing No1 Inter Shft RH C\/out-Mech","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"REPLACE BROKEN BONNET ASSM","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"WK1566 Engine oil consumption high 0 THO","fault_type":"mechanical","safety_involved":false,"picked_as":"risky"}
+{"text":"HYDRAULIC OIL SITE GLASS NOT READING","fault_type":"sensor","safety_involved":false,"picked_as":"risky"}
+{"text":"MB119 CHANGE OUT POS 0 WHEEL END","fault_type":"mechanical","safety_involved":false,"picked_as":"random"}
+{"text":"brake calipers seizing up","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Brake fault light coming on","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Cracked Weld & U\/S bolts F\/LHS I Beam","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AF5037 Oil leak-water pump moter filter","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AF5037 Left rear brake temp err on VIMS","fault_type":"sensor","safety_involved":true,"picked_as":"risky"}
+{"text":"CW UN7986 Engine water pump leaking","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"WJ525 PARK BRAKE FAULT","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"inspect oil still around LHR tyre","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"replace stop button on tub - need HV OFF","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"XW7976 Hyd oil leak RHS rear of engine","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"CC708 repair front light wiring","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"MB119 replace park brake coil","fault_type":"electrical","safety_involved":true,"picked_as":"risky"}
+{"text":"CR871 replace steering pilot valve","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"CD3914 Spray system Water pump leak PO","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"060 # 7 intake fan mesh req reattachment","fault_type":"safety","safety_involved":true,"picked_as":"random"}
+{"text":"JA0341 Minor leak hydraulic pump","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"PH639 ENGINE MOUNT BOLTS COMING LOOSE","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"RH mirror broken","fault_type":"other","safety_involved":true,"picked_as":"random"}
+{"text":"XH531 INSPECT OVERHEATING","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"PH639 REPAIR OIL LEAK IN CAB","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"REPLACE BRAKE PADS & LEAKING BOOSTE","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"XH1714 Park brake alarm fault","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Front Brace Broken","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"leak from grease pump","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"# 6 swing pinion cracked req replacing","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"TV3998 Grease line leak hose on hammer","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Hoist brake #1replace brake lining","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"MB119 PARK BRAKE FAULT INVESTAGATE","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"PH6610 Hydraulic oil leak","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Replace leaking wiggins diesel gun","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"walk motor 6 brake fault","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"XH531 REPLACE E STOP","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"Cabin Roof Glass Cracked","fault_type":"other","safety_involved":true,"picked_as":"risky"}
+{"text":"VU1914 Oil leak from dipstick","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"JZ9248 leaks on strg tank and lines","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"BG9236 Fuel tank filling cap missing","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Cracked handrail joint at stanchion","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"Pos #2 steer oil inspection plug missing","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"XH531 REPL BLOWN BRAKE LINE AND REPLACE","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"VA26 REPAIR PARK BRAKE FAULT","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"UQ9701 Eng oil cooler bypass tube leak","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"KI2123 Minor leaks on Diff & T C","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Ze7762 diff leak","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"GS690 REP OIL LEAK IN CAB DOOR","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AN426 REPORT ON OIL LEAK @ CRANKSHAFT","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"TY8010 LHS Inside handrail mounting","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"AF5037 Enviro filter fittings oil leaks","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"hyd oil leak on boom","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"BF079 REPLACE FIRE EXT","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"PH639 replace burnt out pre cleaner moto","fault_type":"electrical","safety_involved":true,"picked_as":"risky"}
+{"text":"P Burst hose lube system Y","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"LW 8703 Brake oil cooling hose rubbing","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"no trailer brakes","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AN426 REPLACE BLOWN STEER HOSE","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"GS690 BROK CLAMP ON CROWD CYL HOSE TBC","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"Hoist hose leaking","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"NL323 Repair Gear Selection Fault","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"FUEL SYS - WIGENS NOZZEL LEAKING","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"propel ground fault","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"LL3433 repair tail light wiring","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"RT3290 Fuel leak @ Transfer pump","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"PY9512 water leak from mast","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"ZB3832 Brake Foot Valve Leaking Air","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"tripped earth leakage at sub","fault_type":"electrical","safety_involved":true,"picked_as":"risky"}
+{"text":"TO0487 L\/HR Strut guard missing","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"replace RH steer spring centre bolt","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"XH531 REP WIRING TO FRONT LIGHTS FOUND L","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"SS0308 Repair fuel leak on engine","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"CC708 BDD36 Repair rear guard & steps","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"Coolant leaks after cooler T joint","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AN426 INSPECT OIL LEAK","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"JP367 REPAIR FUEL LEAK","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AE2918 Pos 7 brake overhaul","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"r\/h\/s track pin coming out","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"526 Crack in boompoint box L\/H","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"060 Hoist t7 has hot spot","fault_type":"electrical","safety_involved":true,"picked_as":"risky"}
+{"text":"fire ext brackets broken missing","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"MB119 Change Out Steering Control Lever","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"MR0229 Leaking diff fan motor hose","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"GU245 REPAIR THROTTLE FAULT","fault_type":"other","safety_involved":true,"picked_as":"random"}
+{"text":"Cracked stanchion 2nd landing - inside","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"QR0218 hyd overheating C\/O HYD COOLER","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"NF4651 COOLANT LEAK AT JACKET WATER PUMP","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Loose swing pinion bolts swing No1","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"JZ9248 Engine oil leak onto belly plate","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Be8381 Steering control valve leaking","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"wipers not working","fault_type":"other","safety_involved":true,"picked_as":"random"}
+{"text":"XH335 - Replace Tyre Pos 2","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"replace faulty headlight rotary switch","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"UY2435 Minor transmission oil leak","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"060 Hoist brake # 3 position out of adju","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AV4451 Hyd hose leaking","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Tighten handrail around fairleads","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"PH639 PARK BRAKE STAYING ON","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"MV3594 Diff oil leak","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"DU7016 oil leak from brake screen hose","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"MB119 REPAIR IMPLEMENT VALVE LEAK","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"RW7142 Repair hand rails","fault_type":"safety","safety_involved":true,"picked_as":"random"}
+{"text":"MB119 SVO376 Repairs to guards text","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"UQ9701 High beam U\/S","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"Yx 6358 Live fuel lockout U\/S","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"UM4228 ladder fault","fault_type":"safety","safety_involved":true,"picked_as":"random"}
+{"text":"DO7053 fire suppression bracket fallan","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"dump rope came out of socket","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"Ww0780 fuel and coolant leaks","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"526 boom handrails cracked mid pipe","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"blown hose r\/h final drive","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"O-ring on swing brake#1 oiler needs repl","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Brakes smelly in house Swing no 5","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"CW MR0229 #14 rocker box leaking Fnsep","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"AN426 FIRE SUPP WENT OFF-INV & REPAIR","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"CR871 REP OIL LEAK RHS LIFT CIRCUIT","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"lost R\/H quick tip","fault_type":"other","safety_involved":true,"picked_as":"random"}
+{"text":"ti2034 diff lube pump leaking PO","fault_type":"mechanical","safety_involved":true,"picked_as":"risky"}
+{"text":"Weld HV Room structural cracks","fault_type":"other","safety_involved":true,"picked_as":"risky"}
+{"text":"DU7016 electric horn not working","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
+{"text":"WJ525 REPL FIRE SUPPRESSION SWITCH","fault_type":"safety","safety_involved":true,"picked_as":"risky"}
+{"text":"AL6487 broken grease line rht steer ram","fault_type":"mechanical","safety_involved":true,"picked_as":"random"}
+{"text":"Hoist gen 3 excessisve sparking","fault_type":"electrical","safety_involved":true,"picked_as":"random"}
