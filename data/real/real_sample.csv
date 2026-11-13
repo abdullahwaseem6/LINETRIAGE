@@ -1,5 +1,5 @@
 id,text,fault_type,safety_involved,notes
-M01,AN426 TEMP REP TO TRANS DROP BOX LEAK,mechanical,true,leak: slip risk
+M01,AN426 TEMP REP TO TRANS DROP BOX LEAK,mechanical,true,temporary repair: hazard may remain
 M02,BF079 REPLACE FAULTY FUEL SENDER,sensor,false,fuel level sender
 M03,Replace brake hose,mechanical,true,brakes
 M04,propel blower motor No 5 u/s,electrical,false,blower motor broken

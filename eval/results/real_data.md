@@ -53,3 +53,25 @@ The first three are exactly the kind of equipment I deliberately did **not** put
 - **Labels were drafted by Claude Opus**, a close relative of the model being tested, and still need a human review. Borderline cases are explained in each CSV's `notes` column.
 - Mining equipment, not a factory line; English only.
 - 150 test notes, 53 of them safety cases: still a small sample.
+
+## Revision: labelling guide reviewed
+
+After the first results, the labelling guide was reviewed and approved with three revisions:
+1. **Principle:** safety involvement depends on the actual or foreseeable hazard, not on the fault category.
+2. **Leaks:** active leak → true; already repaired with no remaining hazard → false; unclear → judge the wording.
+3. **Lights, gauges and sensors:** consequence-based. Headlights, warning beacons and visibility cameras → true; work lights, gauges and engine sensors → false.
+
+Every affected record was re-labelled in both sets: 3 test notes changed to `true` (T062 visibility camera, T064 headlight, T113 headlight alignment). The prompt got the same rules, plus one line ("damage that is only 'holding' or patched still counts as a hazard") after the change caused a missed safety case in the factory set (R53, "bent but holding").
+
+| | Dev (60) | **Test (150)** | Factory reports (60) |
+|---|---|---|---|
+| Safety recall | 100% | **90.5%** | 100% |
+| False safety alarms | 8.8% | 13.1% | |
+| `fault_type` accuracy | 90.0% | 82.4% | |
+| Route accuracy | | | 97.2% |
+
+Across the last two test runs, safety recall was 92.9% and 90.5%, with the same notes missed: Haiku isn't fully consistent, so read the real-data number as **about 90–93%**. The notes still missed are the specialised safety devices (neutraliser switch, gas tester, fire extinguishers), sometimes the newly labelled visibility items (camera, headlight alignment), and the two judgement calls.
+
+**Note on the test set:** the test set has now been scored several times while the rules changed. The rule changes came from the guide review, not from the test results, but the set is no longer completely untouched. A final claim should use a fresh set of real notes.
+
+**Who defines "dangerous":** the labelling rules and the prompt come from the same guide, so part of the improvement is the model learning the guide's definition of danger. That's how labelling guidelines work in practice, but the definition is a human policy choice: it should be owned and approved by a person, as this review did.

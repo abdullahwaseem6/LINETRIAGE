@@ -41,21 +41,20 @@ human approves or overrides
 | Metric | Result |
 |---|---|
 | **Safety recall** | **100%** (45/45 safety runs caught) |
-| Route accuracy | 96.7% |
-| Same route on every run | 96.7% |
+| Route accuracy | 97.2% |
 | Latency | 2.0s average |
-| Cost per 1,000 reports | $0.36 |
+| Cost per 1,000 reports | $0.39 |
 
-A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers from 56 to 17. Adding rules for real heavy-equipment notes (below) cost a little here: 98.3% → 96.7%, safety recall unchanged. See [the before/after write-up](eval/results/schema_review.md).
+A schema review raised route accuracy from 95.0% to 98.3% and cut wrong answers from 56 to 17. Adding rules for real heavy-equipment notes (below) cost a little here: 98.3% → 97.2%, safety recall unchanged. See [the before/after write-up](eval/results/schema_review.md).
 
-**On real notes** ([MaintNorm](https://github.com/nlp-tlp/maintnorm): mining maintenance work orders), safety recall was only **63.5%** at first: calm notes like "Replace brake hose" weren't seen as risks. After adding rules learned from a separate dev set, recall on 150 unseen real notes rose to **91.8%**, at the cost of more false alarms (12.4%). See [the real-data write-up](eval/results/real_data.md).
+**On real notes** ([MaintNorm](https://github.com/nlp-tlp/maintnorm): mining maintenance work orders), safety recall was only **63.5%** at first: calm notes like "Replace brake hose" weren't seen as risks. After adding rules learned from a separate dev set, recall on 150 unseen real notes rose to **about 90–93%** (it varies between runs), at the cost of more false alarms (11–13%). See [the real-data write-up](eval/results/real_data.md).
 
 ## What still fails
 
 - Notes describing two faults keep only the more serious one (the schema holds one fault).
 - One false safety alarm: "let it cool" is read as overheating. It errs on the safe side.
 - Slang like "pc is dead dead" is sometimes classed as `other` instead of `electrical`. The route is still correct.
-- On real notes, safety recall is 91.8%, not 100%: specialised safety equipment (gas testers, interlock switches) is still missed.
+- On real notes, safety recall is about 90–93%, not 100%: specialised safety equipment (gas testers, interlock switches) is still missed.
 - The 60 factory reports and station registry are synthetic; the real notes are English mining work orders, labelled by Claude Opus and not yet reviewed by a human.
 
 ## Run it

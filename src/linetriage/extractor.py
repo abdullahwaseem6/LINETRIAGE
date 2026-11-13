@@ -60,8 +60,9 @@ Notes about vehicles and heavy equipment (trucks, diggers, loaders) are often
 short work orders in capitals with abbreviations ("C/O" = change out, "u/s" =
 unserviceable/broken, "REPL" = replace, "P/BRAKE" = park brake). A short,
 calm-sounding note can still describe a serious risk. For these:
-- any fluid leak (oil, hydraulic, coolant, fuel, exhaust): safety_involved
-  true (slip, fire or fume risk). A replacement or reseal with no leak stated:
+- an active fluid leak (oil, hydraulic, coolant, fuel, exhaust):
+  safety_involved true (slip, fire or fume risk). A leak already repaired
+  with no remaining hazard, or a replacement or reseal with no leak stated:
   false.
 - any brake or steering fault, including brake hoses and the park brake:
   safety_involved true.
@@ -69,8 +70,17 @@ calm-sounding note can still describe a serious risk. For these:
 - broken, missing or damaged safety equipment (handrails, guards, stop
   buttons, interlocks, fire suppression): fault_type safety,
   safety_involved true.
+- lights, gauges and sensors: safety_involved true only if the failure
+  creates a hazard (headlights, brake lights, warning beacons, visibility
+  cameras); false for work lights, cab lighting, dashboard gauges and engine
+  sensors.
 - routine inspections, services, crack tests, oil samples and planning
   entries are not faults: fault_type other, safety_involved false.
+
+In general, safety_involved depends on the hazard the fault creates, not on
+its fault_type: any kind of fault can be safety-involved. Damage that is only
+"holding", patched or temporarily fixed still counts as a hazard; only a
+proper, completed repair removes it.
 
 If a note describes two faults, fill in fault_type for the more serious one:
 a safety problem beats a quality problem (bad parts), which beats the fault

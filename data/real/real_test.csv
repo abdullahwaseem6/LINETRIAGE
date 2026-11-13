@@ -60,9 +60,9 @@ T058,Air Leak in Seat Hose,mechanical,false,"air leak, not fluid"
 T059,UF2558 - W REPAIR ENGINE OIL LEAK ANDr,mechanical,true,leak
 T060,AF5037-C/out Fuel Transfer Pump,mechanical,false,
 T061,LD3192 Reseal main water pump mount,mechanical,false,"reseal, no leak stated"
-T062,VistaCam system not working,sensor,false,camera
+T062,VistaCam system not working,sensor,true,visibility camera (rule: consequence-based)
 T063,rear module work lights loose,electrical,false,lights
-T064,xw7695 repair headlight fault,electrical,false,lights
+T064,xw7695 repair headlight fault,electrical,true,headlights (rule: consequence-based)
 T065,Hoist Brake Switch operation,electrical,true,brake switch
 T066,PH639 REPL WORN OUT THROTTLE PEDAL ASSY,mechanical,false,
 T067,BD3257- door spring pivot u/s,mechanical,false,
@@ -111,7 +111,7 @@ T109,GU245 REPLACE ENGINE SPEED SENSOR,sensor,false,
 T110,heater hoses at bottom front of cab u/s,mechanical,false,no leak stated
 T111,XF3996 c/o blown pos 3 tyre,mechanical,true,blown tyre
 T112,replace missing RH handrail bolt,safety,true,handrail
-T113,AI9714 lights need aligning/cv replaced,electrical,false,lights
+T113,AI9714 lights need aligning/cv replaced,electrical,true,"headlight alignment, visibility (borderline)"
 T114,UN7986 coolant leak pos 8 turbo,mechanical,true,leak
 T115,AF5037 2way unit is loose needs tighten,other,false,unclear
 T116,C/O upper hoist chains,mechanical,false,routine replacement
@@ -122,7 +122,7 @@ T120,Loose Drivers Mirror Post,mechanical,false,mirror (borderline: visibility)
 T121,XH531 REPLACE DAMAGED WINDOW,mechanical,true,damaged window
 T122,OO9426-Inspect Operator Seat,other,false,routine inspection
 T123,RHR tremmel wheel snapped off,mechanical,false,
-T124,Flashing light U/S replaced,electrical,false,lights
+T124,Flashing light U/S replaced,electrical,false,"already replaced, no remaining hazard"
 T125,BF079 REPAIRHYD OIL LEAK,mechanical,true,leak
 T126,BF079 REPLACE FIRE EXTINGUISHERS,safety,true,fire extinguishers
 T127,Zk2486 Replace Alternator RH Eng,electrical,false,

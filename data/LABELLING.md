@@ -23,6 +23,8 @@ A slip hazard from an oil leak is `mechanical`, not `safety`. The leak is what w
 
 ## safety_involved
 
+**Principle:** safety involvement is decided by the actual or reasonably foreseeable hazard the fault creates, not by its fault category. A mechanical, electrical, sensor or quality fault can all be safety-involved.
+
 `true` whenever anyone could get hurt, whatever the `fault_type`. Read for hidden risks in casual notes: a removed guard, a burning smell, overheating (fire risk), a leak onto the floor (slip risk), someone slipping, even if the line kept running.
 
 ## recurring
@@ -49,11 +51,19 @@ Label the more serious fault: a safety problem beats a quality problem, which be
 
 The real notes in `data/real/` come from mining trucks and diggers. Same rules, plus:
 
-- **Fluid leaks** (oil, hydraulic, coolant, fuel, exhaust) → `safety_involved: true`: slip, fire or fume risk. A replacement or reseal with no leak stated → `false`.
+- **Fluid leaks** (oil, hydraulic, coolant, fuel, exhaust):
+  - an active leak → `safety_involved: true`: slip, fire or fume risk;
+  - a leak already repaired, with no remaining hazard → `false`;
+  - a replacement or reseal with no leak stated → `false`;
+  - unclear → judge from the wording; don't assume an active leak.
 - **Brakes and steering faults** (including brake cooling hoses, park brake) → `safety_involved: true`.
 - **Tyre damage** (blown, damaged, leaking valve stem) → `safety_involved: true`: blowout risk.
 - **Broken or cracked windows** → `safety_involved: true`.
 - **Access and egress safety** (handrails, walkways, emergency ladders, gate latches) and **safety devices** (seat belts, stop buttons, neutraliser switches, gas testers, fire suppression parts) → `fault_type: safety`, `safety_involved: true`.
 - **Damaged cables and high-voltage faults** → `electrical`, `safety_involved: true`.
 - **Routine inspections, services, crack tests, oil samples, audits, planning** → `other`, `safety_involved: false`.
-- **Lights, gauges, sensors, starter motors, alternators** → `electrical` or `sensor`, `safety_involved: false`.
+- **Lights, gauges and sensors** → `electrical` or `sensor`. `safety_involved` depends on the consequence:
+  - `true` if the failure creates a foreseeable hazard: headlights, brake lights, warning beacons, visibility cameras, or a sensor whose wrong reading could hide a dangerous condition;
+  - `false` for work lights, cab or building lighting, dashboard indicators and gauges, and engine sensors with no direct hazard.
+- **Starter motors, alternators** → `electrical`, `safety_involved: false`.
+- **Consistency:** when a rule changes, re-label every affected record in every dataset, not just new ones.
