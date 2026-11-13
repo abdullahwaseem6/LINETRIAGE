@@ -1,61 +1,61 @@
 id,text,fault_type,safety_involved,notes
-M01,AN426 TEMP REP TO TRANS DROP BOX LEAK,,,
-M02,BF079 REPLACE FAULTY FUEL SENDER,,,
-M03,Replace brake hose,,,
-M04,propel blower motor No 5 u/s,,,
-M05,Coolant leak,,,
-M06,BF079 2691 HR PREVENTATIVE MAINTENANCE,,,
-M07,Drag g/box output shaft leaking,,,
-M08,`afe Fabricate winch rope bracket,,,
-M09,OK5862 Oil pressure gauge not working,,,
-M10,3M Mech Cond Ball Stut Crack Test RZ2293,,,
-M11,LD3192- replace brake cooling hoses,,,
-M12,CR871 INSP ENGINE OIL FILTER,,,
-M13,oil evac hose u/s,,,
-M14,SV687 REPL US LINEAR SENSOR NEXT TBC,,,
-M15,New Dry Air Hose Reels Needed,,,
-M16,VN2231-Fire Suppression Inspection,,,
-M17,BP504 C/O POS 5 TYRE DAMAGE,,,
-M18,CC708 REPLACE BROKEN /CRACKED WINDOWS,,,
-M19,1000H Insp Hyd Cyl Rip Lift LH CC0233,,,
-M20,Prep 4X dump links for next use,,,
-M21,PH639 REP RIDE CONTROL,,,
-M22,EZ687 Wheel chock safety rod bent,,,
-M23,AN426 REPL CRACKED FRT 1/4 & REAR WINDOW,,,
-M24,CR871 REPAIR EXHAUST LEAK TEXT,,,
-M25,3M Mech Cond Ball Stub Crack Test VU1914,,,
-M26,WJ525 P/BRAKE FAULT,,,
-M27,OQ524 LEAKING RADIATOR,,,
-M28,hoist slack rope sensor repairs improve,,,
-M29,no power in cab,,,
-M30,BC4051 cover ard park brake button broke,,,
-M31,SR0261 Hand rail cracked,,,
-M32,AN426 L/H STEERING PIN NOT TAKING GREASE,,,
-M33,WJ525 REPAIR FAULTY FUEL GAUGE,,,
-M34,FW9593 - Install precleaner dust valves,,,
-M35,PH639 REPAIR STEERING OIL LEAKS,,,
-M36,PY9512-C/out Starter Motor UPR,,,
-M37,BC4051 ripper boot light out,,,
-M38,Key broken off in ignition,,,
-M39,WK1566 Investigate A/C issue,,,
-M40,JZ9248 rear brake cooling hose leak,,,
-M41,CC708 REPL POS 2 TYRE DAMAGE,,,
-M42,5H Lean for Remington Wksp WK 98,,,
-M43,FN5736 Fit new version rear ID,,,
-M44,AN426 SAMPLE/DRAIN / REFILL / ENGINE OIL,,,
-M45,DBZ 45329 Crack test & inspect,,,
-M46,PH639 INSPECT NO START,,,
-M47,HF338 TELE-REMOTE CONTROL SYSTEM,,,
-M48,5635 Hoist Mtr / Blower Connections,,,
-M49,AN426 REMOVE/RESEAL TRANSFER PUMP TBC,,,
-M50,OQ524 REPLACE RADIATOR,,,
-M51,AN426 BUU8 Rep oil leak at fuel pump,,,
-M52,2721A Mech Repl Fuel Inject J4 DB2637,,,
-M53,AI9714 Coolant leak near engine front,,,
-M54,UN7986 coolant leak from water pump pipe,,,
-M55,replace broken drain taps on air tanks,,,
-M56,Change oil Drag Box #1,,,
-M57,Air compressor outlet temp o/temp,,,
-M58,JA0341 Bottom L/H Hoist cyl leak,,,
-M59,3M Mech Cond Ball Stut Crack Test JZ9248,,,
-M60,Cracked suction pipe,,,
+M01,AN426 TEMP REP TO TRANS DROP BOX LEAK,mechanical,true,leak: slip risk
+M02,BF079 REPLACE FAULTY FUEL SENDER,sensor,false,fuel level sender
+M03,Replace brake hose,mechanical,true,brakes
+M04,propel blower motor No 5 u/s,electrical,false,blower motor broken
+M05,Coolant leak,mechanical,true,leak: slip risk
+M06,BF079 2691 HR PREVENTATIVE MAINTENANCE,other,false,routine maintenance
+M07,Drag g/box output shaft leaking,mechanical,true,leak: slip risk
+M08,`afe Fabricate winch rope bracket,other,false,fabrication task
+M09,OK5862 Oil pressure gauge not working,sensor,false,gauge
+M10,3M Mech Cond Ball Stut Crack Test RZ2293,other,false,routine inspection
+M11,LD3192- replace brake cooling hoses,mechanical,true,brakes
+M12,CR871 INSP ENGINE OIL FILTER,other,false,routine inspection
+M13,oil evac hose u/s,mechanical,false,"hose broken, no leak stated (borderline)"
+M14,SV687 REPL US LINEAR SENSOR NEXT TBC,sensor,false,
+M15,New Dry Air Hose Reels Needed,other,false,"request, not a fault"
+M16,VN2231-Fire Suppression Inspection,other,false,routine inspection of a safety system
+M17,BP504 C/O POS 5 TYRE DAMAGE,mechanical,true,tyre damage on heavy vehicle: blowout risk
+M18,CC708 REPLACE BROKEN /CRACKED WINDOWS,mechanical,true,broken glass (borderline)
+M19,1000H Insp Hyd Cyl Rip Lift LH CC0233,other,false,routine inspection
+M20,Prep 4X dump links for next use,other,false,preparation task
+M21,PH639 REP RIDE CONTROL,mechanical,false,
+M22,EZ687 Wheel chock safety rod bent,safety,true,safety device bent
+M23,AN426 REPL CRACKED FRT 1/4 & REAR WINDOW,mechanical,true,broken glass (borderline)
+M24,CR871 REPAIR EXHAUST LEAK TEXT,mechanical,true,exhaust leak: fumes/fire
+M25,3M Mech Cond Ball Stub Crack Test VU1914,other,false,routine inspection
+M26,WJ525 P/BRAKE FAULT,mechanical,true,park brake
+M27,OQ524 LEAKING RADIATOR,mechanical,true,leak: slip risk
+M28,hoist slack rope sensor repairs improve,safety,true,slack rope sensor is a hoist safety device (borderline: could be sensor)
+M29,no power in cab,electrical,false,
+M30,BC4051 cover ard park brake button broke,mechanical,false,"cover only, brake itself works (borderline)"
+M31,SR0261 Hand rail cracked,safety,true,handrail is fall protection
+M32,AN426 L/H STEERING PIN NOT TAKING GREASE,mechanical,false,lubrication
+M33,WJ525 REPAIR FAULTY FUEL GAUGE,sensor,false,gauge
+M34,FW9593 - Install precleaner dust valves,other,false,installation task
+M35,PH639 REPAIR STEERING OIL LEAKS,mechanical,true,steering + leak
+M36,PY9512-C/out Starter Motor UPR,electrical,false,starter motor
+M37,BC4051 ripper boot light out,electrical,false,work light (borderline: visibility)
+M38,Key broken off in ignition,mechanical,false,
+M39,WK1566 Investigate A/C issue,other,false,unclear
+M40,JZ9248 rear brake cooling hose leak,mechanical,true,brakes + leak
+M41,CC708 REPL POS 2 TYRE DAMAGE,mechanical,true,tyre damage on heavy vehicle: blowout risk
+M42,5H Lean for Remington Wksp WK 98,other,false,planning entry
+M43,FN5736 Fit new version rear ID,other,false,installation task
+M44,AN426 SAMPLE/DRAIN / REFILL / ENGINE OIL,other,false,routine service
+M45,DBZ 45329 Crack test & inspect,other,false,routine inspection
+M46,PH639 INSPECT NO START,other,false,cause unknown
+M47,HF338 TELE-REMOTE CONTROL SYSTEM,other,false,unclear
+M48,5635 Hoist Mtr / Blower Connections,electrical,false,connections
+M49,AN426 REMOVE/RESEAL TRANSFER PUMP TBC,mechanical,false,"reseal, no leak stated"
+M50,OQ524 REPLACE RADIATOR,mechanical,false,
+M51,AN426 BUU8 Rep oil leak at fuel pump,mechanical,true,oil leak at fuel pump: fire risk
+M52,2721A Mech Repl Fuel Inject J4 DB2637,mechanical,false,
+M53,AI9714 Coolant leak near engine front,mechanical,true,leak: slip risk
+M54,UN7986 coolant leak from water pump pipe,mechanical,true,leak: slip risk
+M55,replace broken drain taps on air tanks,mechanical,false,
+M56,Change oil Drag Box #1,other,false,routine service
+M57,Air compressor outlet temp o/temp,electrical,true,overheating: fire risk
+M58,JA0341 Bottom L/H Hoist cyl leak,mechanical,true,leak: slip risk
+M59,3M Mech Cond Ball Stut Crack Test JZ9248,other,false,routine inspection
+M60,Cracked suction pipe,mechanical,false,"crack, no leak stated"
