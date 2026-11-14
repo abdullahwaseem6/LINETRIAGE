@@ -141,19 +141,54 @@
   .section-title h2 { margin: 12px 0 10px; font: italic 500 clamp(32px, 4vw, 48px)/1.1 var(--serif); }
   .section-title p { margin: 0 auto; max-width: 600px; color: var(--muted); font-weight: 300; }
 
-  .pipeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0 0 32px; border: 1px solid var(--line-soft); }
-  .stage { padding: 18px 22px; border-left: 1px solid var(--line-soft); transition: background .4s; }
-  .stage:first-child { border-left: 0; }
-  .stage .num { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--dim); }
+  .pipeline { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 0 0 48px; }
+  .stage {
+    --mx: 50%; --my: 50%; --glow: 0;
+    position: relative; padding: 20px 22px; border: 1px solid var(--line-soft); cursor: default;
+    background:
+      radial-gradient(260px circle at var(--mx) var(--my), rgba(90, 169, 255, calc(0.10 + var(--glow) * 0.12)), transparent 60%),
+      rgba(255, 255, 255, 0.02);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s;
+  }
+  .stage::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(124, 192, 255, 0.9), transparent);
+    background-size: 40% 100%; background-repeat: no-repeat; animation: sweep 4.5s ease-in-out infinite;
+  }
+  .stage:nth-child(2)::before { animation-delay: 1.5s; }
+  .stage:nth-child(3)::before { animation-delay: 3s; }
+  @keyframes sweep { 0% { background-position: -40% 0; } 60%, 100% { background-position: 140% 0; } }
+  .stage:hover, .stage.active {
+    --glow: 1; transform: translateY(-4px); border-color: rgba(90, 169, 255, 0.55);
+    box-shadow: 0 0 0 1px rgba(90, 169, 255, 0.18), 0 18px 50px -14px rgba(90, 169, 255, 0.55), inset 0 0 30px -12px rgba(90, 169, 255, 0.5);
+  }
+  .stage .num { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--dim); transition: color .3s; }
   .stage .name { margin-top: 8px; font: italic 500 20px/1.2 var(--serif); }
   .stage .desc { color: var(--muted); font-size: 13px; font-weight: 300; }
-  .stage.active { background: rgba(242, 201, 123, 0.08); }
-  .stage.active .num { color: var(--gold); }
+  .stage:hover .num, .stage.active .num { color: #8cc6ff; }
+  .stage.done { border-color: rgba(111, 214, 163, 0.35); }
   .stage.done .num { color: var(--green); }
   .stage.done .num::after { content: "  ✓"; }
+  .spark {
+    position: absolute; width: 4px; height: 4px; border-radius: 50%; pointer-events: none; z-index: 2;
+    background: #a8d4ff; box-shadow: 0 0 8px 2px rgba(90, 169, 255, 0.85), 0 0 18px 4px rgba(90, 169, 255, 0.35);
+    animation: spark var(--life, 2.2s) ease-out forwards;
+  }
+  @keyframes spark {
+    0% { opacity: 0; transform: translate(0, 0) scale(1); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.2); }
+  }
+  .flow { position: absolute; left: 8%; right: 8%; bottom: -24px; height: 1px; background: linear-gradient(90deg, transparent, rgba(90,169,255,0.35), transparent); pointer-events: none; }
+  .flow::after {
+    content: ""; position: absolute; top: -3px; left: 0; width: 70px; height: 7px; border-radius: 999px;
+    background: radial-gradient(closest-side, rgba(168, 212, 255, 1), rgba(90, 169, 255, 0.5) 50%, transparent);
+    filter: blur(0.5px); animation: travel 3.2s cubic-bezier(.45,.05,.55,.95) infinite;
+  }
+  @keyframes travel { 0% { left: -5%; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { left: 95%; opacity: 0; } }
 
   .grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 24px; align-items: start; }
-  @media (max-width: 900px) { .grid, .pipeline { grid-template-columns: 1fr; } .stage { border-left: 0; border-top: 1px solid var(--line-soft); } .stage:first-child { border-top: 0; } }
+  @media (max-width: 900px) { .grid, .pipeline { grid-template-columns: 1fr; } .flow { display: none; } }
 
   .panel { background: var(--panel); border: 1px solid var(--line-soft); overflow: hidden; }
   .panel-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--line-soft); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
@@ -222,7 +257,7 @@
   footer { text-align: center; padding: 30px; color: var(--dim); font-size: 12.5px; border-top: 1px solid var(--line-soft); }
 
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } .spark { display: none; } }
 </style>
 </head>
 <body>
@@ -288,6 +323,7 @@
       <div class="stage" id="st1"><div class="num">01 — LLM</div><div class="name">Extract facts</div><div class="desc">Station, fault, downtime, safety risk</div></div>
       <div class="stage" id="st2"><div class="num">02 — Rules</div><div class="name">Decide route</div><div class="desc">Plain, tested Python. Safety first.</div></div>
       <div class="stage" id="st3"><div class="num">03 — Human</div><div class="name">Approve</div><div class="desc">A recommendation. You decide.</div></div>
+      <div class="flow" aria-hidden="true"></div>
     </div>
 
     <div class="grid">
@@ -363,6 +399,53 @@
   const text = $("text"), submit = $("submit");
   const stages = [$("st1"), $("st2"), $("st3")];
   let ticketNo = 1000 + Math.floor(Math.random() * 9000);
+
+
+  // Pipeline boxes: a light that follows the mouse, and blue sparks drifting out and fading.
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  stages.forEach((stage) => {
+    stage.addEventListener("pointermove", (e) => {
+      const r = stage.getBoundingClientRect();
+      stage.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      stage.style.setProperty("--my", `${e.clientY - r.top}px`);
+    });
+    stage.addEventListener("pointerleave", () => {
+      stage.style.setProperty("--mx", "50%");
+      stage.style.setProperty("--my", "50%");
+    });
+  });
+
+  function spark(stage) {
+    const r = stage.getBoundingClientRect();
+    const el = document.createElement("span");
+    el.className = "spark";
+    // Start somewhere on the box's edge and drift outwards.
+    const edge = Math.floor(Math.random() * 4);
+    let x = Math.random() * r.width, y = Math.random() * r.height, dx = (Math.random() - 0.5) * 30, dy = (Math.random() - 0.5) * 30;
+    if (edge === 0) { y = 0; dy = -(20 + Math.random() * 40); }
+    if (edge === 1) { x = r.width; dx = 20 + Math.random() * 40; }
+    if (edge === 2) { y = r.height; dy = 20 + Math.random() * 30; }
+    if (edge === 3) { x = 0; dx = -(20 + Math.random() * 40); }
+    el.style.left = `${x - 2}px`;
+    el.style.top = `${y - 2}px`;
+    el.style.setProperty("--dx", `${dx}px`);
+    el.style.setProperty("--dy", `${dy}px`);
+    el.style.setProperty("--life", `${1.4 + Math.random() * 1.6}s`);
+    el.addEventListener("animationend", () => el.remove());
+    stage.append(el);
+  }
+
+  if (!calm) {
+    setInterval(() => {
+      if (document.hidden) return;
+      stages.forEach((stage) => {
+        const busy = stage.matches(":hover") || stage.classList.contains("active");
+        const chance = busy ? 0.95 : 0.22;
+        if (Math.random() < chance) spark(stage);
+        if (busy && Math.random() < 0.6) spark(stage);
+      });
+    }, 160);
+  }
 
   const updateCount = () => { $("count").textContent = `${text.value.length} / 2000`; };
   text.addEventListener("input", updateCount);
