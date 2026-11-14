@@ -1,0 +1,20 @@
+# Render deployment (https://render.com): New → Blueprint → pick this repo.
+# The API key is NOT stored here: Render asks for it once, in its dashboard.
+services:
+  - type: web
+    name: linetriage
+    runtime: python
+    plan: free
+    # Install the app, then train the small second-opinion model (a few seconds).
+    buildCommand: pip install -e . && python training/train_baseline.py
+    startCommand: uvicorn linetriage.api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: LINETRIAGE_MAX_PER_MINUTE
+        value: "8"
+      - key: LINETRIAGE_MAX_PER_DAY
+        value: "300"

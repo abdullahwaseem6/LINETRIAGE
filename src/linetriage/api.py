@@ -7,11 +7,12 @@ Then open http://localhost:8000/docs to try it.
 
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from linetriage.extractor import ExtractionError, extract
+from linetriage.limits import limiter
 from linetriage.rules import Route, route_report
 from linetriage.schema import FaultReport
 from linetriage.second_opinion import SecondOpinion, second_opinion
@@ -26,6 +27,11 @@ def index() -> FileResponse:
     return FileResponse(INDEX_HTML)
 
 
+@app.get("/health", include_in_schema=False)
+def health() -> dict:
+    return {"status": "ok"}
+
+
 class TriageRequest(BaseModel):
     text: str = Field(min_length=1, max_length=2000)
 
@@ -38,7 +44,13 @@ class TriageResponse(BaseModel):
 
 
 @app.post("/triage", response_model=TriageResponse)
-def triage(request: TriageRequest) -> TriageResponse:
+def triage(request: TriageRequest, http: Request) -> TriageResponse:
+    # Behind a hosting proxy the visitor's address is the first X-Forwarded-For entry.
+    forwarded = http.headers.get("x-forwarded-for", "")
+    visitor = forwarded.split(",")[0].strip() or (http.client.host if http.client else "unknown")
+    too_many = limiter.check(visitor)
+    if too_many:
+        raise HTTPException(status_code=429, detail=too_many)
     try:
         facts = extract(request.text)
     except ExtractionError as e:

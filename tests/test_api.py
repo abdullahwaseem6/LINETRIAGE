@@ -20,6 +20,11 @@ SAFETY_FACTS = FaultReport(
 )
 
 
+@pytest.fixture(autouse=True)
+def fresh_limits():
+    api.limiter.reset()
+
+
 @pytest.fixture
 def fake_extract(monkeypatch):
     calls = []
@@ -80,3 +85,29 @@ def test_second_opinion_is_included(fake_extract, monkeypatch):
 def test_works_without_trained_model(fake_extract):
     body = client.post("/triage", json={"text": "guard off"}).json()
     assert body["second_opinion"] is None
+
+
+def test_health():
+    assert client.get("/health").json() == {"status": "ok"}
+
+
+def test_per_visitor_limit(fake_extract, monkeypatch):
+    monkeypatch.setattr(api.limiter, "per_minute", 2)
+    codes = [client.post("/triage", json={"text": "x"}).status_code for _ in range(3)]
+    assert codes == [200, 200, 429]
+    assert len(fake_extract) == 2  # the blocked request never reached the LLM
+
+
+def test_visitors_are_counted_separately(fake_extract, monkeypatch):
+    monkeypatch.setattr(api.limiter, "per_minute", 1)
+    a = client.post("/triage", json={"text": "x"}, headers={"x-forwarded-for": "1.1.1.1"})
+    b = client.post("/triage", json={"text": "x"}, headers={"x-forwarded-for": "2.2.2.2"})
+    assert (a.status_code, b.status_code) == (200, 200)
+
+
+def test_daily_limit(fake_extract, monkeypatch):
+    monkeypatch.setattr(api.limiter, "per_day", 1)
+    client.post("/triage", json={"text": "x"}, headers={"x-forwarded-for": "1.1.1.1"})
+    blocked = client.post("/triage", json={"text": "x"}, headers={"x-forwarded-for": "2.2.2.2"})
+    assert blocked.status_code == 429
+    assert "today" in blocked.json()["detail"]
