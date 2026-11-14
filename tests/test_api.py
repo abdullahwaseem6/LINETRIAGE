@@ -29,6 +29,7 @@ def fake_extract(monkeypatch):
         return SAFETY_FACTS
 
     monkeypatch.setattr(api, "extract", fake)
+    monkeypatch.setattr(api, "second_opinion", lambda text: None)
     return calls
 
 
@@ -64,3 +65,18 @@ def test_home_page_is_served():
     assert response.status_code == 200
     assert "text/html" in response.headers["content-type"]
     assert "LineTriage" in response.text
+
+
+def test_second_opinion_is_included(fake_extract, monkeypatch):
+    from linetriage.second_opinion import SecondOpinion
+
+    opinion = SecondOpinion(danger_score=0.83, threshold=0.18, dangerous=True, milliseconds=0.9)
+    monkeypatch.setattr(api, "second_opinion", lambda text: opinion)
+    body = client.post("/triage", json={"text": "guard off"}).json()
+    assert body["second_opinion"]["dangerous"] is True
+    assert body["route"] == "safety_alert"  # the second opinion never changes the route
+
+
+def test_works_without_trained_model(fake_extract):
+    body = client.post("/triage", json={"text": "guard off"}).json()
+    assert body["second_opinion"] is None

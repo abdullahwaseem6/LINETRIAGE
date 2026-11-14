@@ -1,4 +1,5 @@
-"""Web API: POST a report, get back the extracted facts and the route.
+"""Web API: POST a report, get back the extracted facts, the route, and the
+small model's second opinion on safety.
 
 Run it with: uvicorn linetriage.api:app --reload
 Then open http://localhost:8000/docs to try it.
@@ -13,6 +14,7 @@ from pydantic import BaseModel, Field
 from linetriage.extractor import ExtractionError, extract
 from linetriage.rules import Route, route_report
 from linetriage.schema import FaultReport
+from linetriage.second_opinion import SecondOpinion, second_opinion
 
 app = FastAPI(title="LineTriage", description="Factory fault report triage.")
 
@@ -32,6 +34,7 @@ class TriageResponse(BaseModel):
     facts: FaultReport
     route: Route
     reason: str
+    second_opinion: SecondOpinion | None = None
 
 
 @app.post("/triage", response_model=TriageResponse)
@@ -41,4 +44,9 @@ def triage(request: TriageRequest) -> TriageResponse:
     except ExtractionError as e:
         raise HTTPException(status_code=502, detail=str(e))
     decision = route_report(facts)
-    return TriageResponse(facts=facts, route=decision.route, reason=decision.reason)
+    return TriageResponse(
+        facts=facts,
+        route=decision.route,
+        reason=decision.reason,
+        second_opinion=second_opinion(request.text),
+    )
