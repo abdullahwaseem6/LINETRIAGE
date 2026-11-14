@@ -111,3 +111,13 @@ def test_daily_limit(fake_extract, monkeypatch):
     blocked = client.post("/triage", json={"text": "x"}, headers={"x-forwarded-for": "2.2.2.2"})
     assert blocked.status_code == 429
     assert "today" in blocked.json()["detail"]
+
+
+def test_llm_outage_returns_clean_503(monkeypatch):
+    def broken(text):
+        raise TypeError("Could not resolve authentication method")
+
+    monkeypatch.setattr(api, "extract", broken)
+    response = client.post("/triage", json={"text": "st5 broke"})
+    assert response.status_code == 503
+    assert "unavailable" in response.json()["detail"]

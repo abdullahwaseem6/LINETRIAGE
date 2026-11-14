@@ -5,8 +5,10 @@ Run it with: uvicorn linetriage.api:app --reload
 Then open http://localhost:8000/docs to try it.
 """
 
+import logging
 from pathlib import Path
 
+import anthropic
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
@@ -55,6 +57,10 @@ def triage(request: TriageRequest, http: Request) -> TriageResponse:
         facts = extract(request.text)
     except ExtractionError as e:
         raise HTTPException(status_code=502, detail=str(e))
+    except (anthropic.APIError, anthropic.AuthenticationError, TypeError) as e:
+        # Missing or wrong API key, provider outage, out of credit: log it, show a clean message.
+        logging.getLogger("linetriage").error("LLM call failed: %s", e)
+        raise HTTPException(status_code=503, detail="The AI service is unavailable right now. Please try again later.")
     decision = route_report(facts)
     return TriageResponse(
         facts=facts,
