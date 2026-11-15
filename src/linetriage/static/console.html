@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LineTriage · Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="console-nav">
+  <nav class="top">
+    <div class="links"><a href="/">Overview</a><a href="/#principles">How it works</a><a href="/docs">API</a></div>
+    <a class="logo" href="/">
+      <svg width="54" height="22" viewBox="0 0 54 22" fill="none" aria-hidden="true"><path d="M2 16 H40 C44 16 48 13 52 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8 11 H36 C40 11 43 9 46 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/><circle cx="20" cy="16" r="2.2" fill="currentColor"/></svg>
+      <b>LINETRIAGE</b><small>Maintenance safety</small>
+    </a>
+    <div class="nav-right"><span class="live"><span class="dot-live"></span>Live</span><span class="role" id="role">Guest</span></div>
+  </nav>
+</header>
+<section class="console page" id="console">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="eyebrow">Live console</div>
+      <h2>Read the note. Route the risk.</h2>
+      <p>AI extracts the facts, tested rules decide the route, a second model double-checks for danger, and a human makes the final call.</p>
+    </div>
+
+    <div class="pipeline" aria-label="Processing pipeline">
+      <div class="stage" id="st1"><div class="num">01 — LLM</div><div class="name">Extract facts</div><div class="desc">Station, fault, downtime, safety risk</div></div>
+      <div class="stage" id="st2"><div class="num">02 — Rules</div><div class="name">Decide route</div><div class="desc">Plain, tested Python. Safety first.</div></div>
+      <div class="stage" id="st3"><div class="num">03 — Human</div><div class="name">Approve</div><div class="desc">A recommendation. You decide.</div></div>
+      <div class="flow" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid">
+      <form class="panel" id="form">
+        <div class="panel-head"><span>Operator report</span><span id="count">0 / 2000</span></div>
+        <div class="panel-body">
+          <label for="text" class="sr-only">Operator report</label>
+          <textarea id="text" maxlength="2000" placeholder="st 5 conveyor jammed couple of times today" required></textarea>
+          <div class="samples">
+            <div class="samples-label">Free samples · real system output</div>
+            <div id="chips"></div>
+          </div>
+          <button class="ghost run" id="submit" type="submit"><span id="submit-label">Run triage</span></button>
+          <div class="error" id="error" role="alert"></div>
+          <div class="access" id="access">
+            <div class="access-label" id="access-label">Your own notes need an access code</div>
+            <div class="access-row">
+              <label for="code" class="sr-only">Access code</label>
+              <input id="code" type="password" autocomplete="off" placeholder="Access code">
+              <button type="button" class="ghost" id="unlock">Unlock</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <section class="panel" aria-live="polite">
+        <div class="panel-head"><span>Triage result</span><span id="ticket">—</span></div>
+        <div id="empty" class="empty"><b>Awaiting a report</b>Pick a sample or paste a note, then run triage.</div>
+        <div id="result" hidden>
+          <div class="route" id="route">
+            <div class="kicker">Recommended route</div>
+            <div class="name"><span class="dot"></span><span id="route-name"></span></div>
+            <div class="reason" id="route-reason"></div>
+          </div>
+          <div class="summary"><b>Summary</b> · <span id="summary"></span></div>
+          <dl class="facts" id="facts"></dl>
+          <div class="second" id="second">
+            <div class="second-head"><span class="t">Second opinion</span><span class="m" id="second-meta"></span></div>
+            <div class="meter"><div class="fill" id="fill"></div><div class="tick" id="tick"></div></div>
+            <div class="verdict" id="verdict"></div>
+          </div>
+          <div class="review">
+            <button type="button" class="ghost" data-decision="Approved">Approve</button>
+            <button type="button" class="ghost" data-decision="Overridden">Override</button>
+            <span class="note" id="review-note">Awaiting your decision</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</section>
+<footer>LineTriage · AI extracts, rules decide, a human approves</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

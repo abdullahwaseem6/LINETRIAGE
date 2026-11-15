@@ -14,6 +14,12 @@ services:
         value: "3.12.8"
       - key: ANTHROPIC_API_KEY
         sync: false
+      # Your own access code: unlimited triage of any note. Pick something long and random.
+      - key: LINETRIAGE_OWNER_CODE
+        sync: false
+      # Codes you give to others (comma-separated). Leave empty if none yet.
+      - key: LINETRIAGE_ACCESS_CODES
+        sync: false
       - key: LINETRIAGE_MAX_PER_MINUTE
         value: "8"
       - key: LINETRIAGE_MAX_PER_DAY

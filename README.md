@@ -72,7 +72,7 @@ pip install -e ".[dev]"
 cp .env.example .env          # then put your API key in .env
 
 pytest                                   # 219 tests, offline, free
-uvicorn linetriage.api:app --reload      # web page at http://localhost:8000
+uvicorn linetriage.api:app --reload      # http://localhost:8000 (overview) and /console
 python eval/run_eval.py                  # full evaluation (about 6 cents)
 ```
 
@@ -84,7 +84,10 @@ python eval/run_eval.py                  # full evaluation (about 6 cents)
 | `src/linetriage/registry.py` | 10 stations with HIGH/MEDIUM/LOW importance |
 | `src/linetriage/rules.py` | The routing rules |
 | `src/linetriage/extractor.py` | The only file that calls the LLM |
-| `src/linetriage/api.py` | FastAPI: `POST /triage` and the web page |
+| `src/linetriage/api.py` | FastAPI: `POST /triage`, the overview page and `/console` |
+| `src/linetriage/access.py` | Free samples for everyone; access codes for your own notes |
+| `src/linetriage/limits.py` | Usage limits for the public site |
+| `render.yaml` | One-click deployment on Render |
 | `src/linetriage/metrics.py` | Scoring for the evaluation |
 | `data/reports.jsonl` | 60 labelled test reports |
 | `data/LABELLING.md` | How each field is labelled |

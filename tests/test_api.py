@@ -5,6 +5,7 @@ from fastapi.testclient import TestClient
 
 from linetriage import api
 from linetriage.extractor import ExtractionError
+from linetriage.access import SAMPLES, Access
 from linetriage.schema import FaultReport
 
 client = TestClient(api.app)
@@ -21,8 +22,15 @@ SAFETY_FACTS = FaultReport(
 
 
 @pytest.fixture(autouse=True)
-def fresh_limits():
+def fresh_limits(monkeypatch):
     api.limiter.reset()
+    api.sample_cache.clear()
+    monkeypatch.setattr(api, "access", Access())  # open by default, like local use
+
+
+@pytest.fixture
+def locked(monkeypatch):
+    monkeypatch.setattr(api, "access", Access(owner_code="owner-secret", member_codes=["guest-pass"]))
 
 
 @pytest.fixture
@@ -121,3 +129,57 @@ def test_llm_outage_returns_clean_503(monkeypatch):
     response = client.post("/triage", json={"text": "st5 broke"})
     assert response.status_code == 503
     assert "unavailable" in response.json()["detail"]
+
+
+def test_console_page_and_assets_are_served():
+    page = client.get("/console")
+    assert page.status_code == 200 and "Console" in page.text
+    assert client.get("/static/app.js").status_code == 200
+    assert client.get("/static/style.css").status_code == 200
+
+
+def test_samples_endpoint():
+    assert client.get("/samples").json() == SAMPLES
+
+
+def test_open_mode_allows_any_note(fake_extract):
+    assert client.post("/access", json={"code": ""}).json() == {"role": "open"}
+    assert client.post("/triage", json={"text": "my own note"}).status_code == 200
+
+
+def test_locked_guest_can_run_samples_only(fake_extract, locked):
+    sample = SAMPLES[0]["text"]
+    assert client.post("/triage", json={"text": sample}).status_code == 200
+    blocked = client.post("/triage", json={"text": "my own note"})
+    assert blocked.status_code == 401
+    assert fake_extract == [sample]  # the blocked note never reached the LLM
+
+
+def test_access_codes_and_roles(fake_extract, locked):
+    assert client.post("/access", json={"code": "nope"}).json() == {"role": "guest"}
+    assert client.post("/access", json={"code": "guest-pass"}).json() == {"role": "member"}
+    assert client.post("/access", json={"code": "owner-secret"}).json() == {"role": "owner"}
+    ok = client.post("/triage", json={"text": "my own note"}, headers={"x-access-code": "guest-pass"})
+    assert ok.status_code == 200
+
+
+def test_owner_skips_rate_limits(fake_extract, locked, monkeypatch):
+    monkeypatch.setattr(api.limiter, "per_minute", 1)
+    headers = {"x-access-code": "owner-secret"}
+    codes = [client.post("/triage", json={"text": "note"}, headers=headers).status_code for _ in range(3)]
+    assert codes == [200, 200, 200]
+
+
+def test_members_are_rate_limited(fake_extract, locked, monkeypatch):
+    monkeypatch.setattr(api.limiter, "per_minute", 1)
+    headers = {"x-access-code": "guest-pass"}
+    codes = [client.post("/triage", json={"text": "note"}, headers=headers).status_code for _ in range(2)]
+    assert codes == [200, 429]
+
+
+def test_sample_results_are_cached(fake_extract):
+    sample = SAMPLES[3]["text"]
+    first = client.post("/triage", json={"text": sample}).json()
+    second = client.post("/triage", json={"text": sample}).json()
+    assert first == second
+    assert fake_extract == [sample]  # the LLM was called once
